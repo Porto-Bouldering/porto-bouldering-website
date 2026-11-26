@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2d1f18" />
     <title>Porto Bouldering</title>
     <link rel="icon" href="assets/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
@@ -21,17 +22,30 @@
         box-sizing: border-box;
       }
 
-      html,
-      body {
-        height: 100%;
+      html {
+        background-color: #2d1f18;
       }
 
       body {
         min-height: 100vh;
+        min-height: 100dvh;
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 2rem;
+        color: #f1e3c8;
+        font-family: "Archivo Black", "Arial Black", Impact, sans-serif;
+        text-align: center;
+      }
+
+      /* Background lives on a fixed layer so it always fills the screen,
+         including on iPhone Safari, where background-attachment: fixed
+         is not supported. */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
         background-color: #2d1f18;
         background-image:
           url("assets/boulders.svg"),
@@ -43,14 +57,10 @@
           );
         background-size: cover, auto;
         background-position: center;
-        background-attachment: fixed;
-        color: #f1e3c8;
-        font-family: "Archivo Black", "Arial Black", Impact, sans-serif;
-        text-align: center;
       }
 
       @media (orientation: portrait) {
-        body {
+        body::before {
           background-image:
             url("assets/boulders-portrait.svg"),
             radial-gradient(
