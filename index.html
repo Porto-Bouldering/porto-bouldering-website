@@ -1,9 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-PT">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Porto Bouldering — Coming soon</title>
+    <title>Porto Bouldering</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪨</text></svg>"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -56,12 +60,56 @@
         text-transform: uppercase;
         color: #c9b899;
       }
+
+      .contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 5rem;
+      }
+
+      .contact {
+        font-family: "Rubik", "Helvetica Neue", Arial, sans-serif;
+        font-weight: 500;
+        font-size: clamp(0.75rem, 1.6vw, 0.95rem);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #c9b899;
+      }
+      .instagram {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5em;
+        text-decoration: none;
+      }
+
+      .instagram::before {
+        content: "";
+        width: 1.3em;
+        height: 1.3em;
+        background-color: currentColor;
+        -webkit-mask: url("https://cdn.jsdelivr.net/npm/@tabler/icons@3/icons/outline/brand-instagram.svg")
+          center / contain no-repeat;
+        mask: url("https://cdn.jsdelivr.net/npm/@tabler/icons@3/icons/outline/brand-instagram.svg")
+          center / contain no-repeat;
+      }
     </style>
   </head>
   <body>
     <main>
       <h1>Brevemente</h1>
       <p class="tagline">Feito de pedra. 🪨</p>
+      <div class="contacts">
+        <a
+          class="contact instagram"
+          href="https://www.instagram.com/portobouldering/"
+          target="_blank"
+          rel="noopener"
+          >@portobouldering</a
+        >
+        <p class="contact">portobouldering@gmail.com</p>
+      </div>
     </main>
   </body>
 </html>
